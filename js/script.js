@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Music Player Control
+  const musicBtn = document.getElementById('musicBtn');
+  const bgMusic = document.getElementById('bgMusic');
+  let isPlaying = false;
+
+  musicBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      bgMusic.pause();
+      musicBtn.classList.remove('playing');
+      musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+      isPlaying = false;
+    } else {
+      bgMusic.play();
+      musicBtn.classList.add('playing');
+      musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      isPlaying = true;
+    }
+  });
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
 
