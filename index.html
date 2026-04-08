@@ -12,10 +12,25 @@
 </head>
 <body>
 
+  <div class="preloader" id="preloader">
+    <div class="loader-content">
+      <div class="fw-logo">FA</div>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+  
+  <div class="cursor-dot" data-cursor-dot></div>
+  <div class="cursor-outline" data-cursor-outline></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div id="particles-js"></div>
+
   <div class="frozen-header">Account Manager • Team Leader</div>
 <div class="music-controller">
-    <button id="musicBtn" class="music-btn">
-        <i id="musicIcon" class="fas fa-music"></i>
+    <button id="musicBtn" class="music-btn" aria-label="Play Background Music">
+      <div class="music-visualizer" id="musicVisualizer" style="display: none;">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <i id="musicIcon" class="fas fa-play"></i>
     </button>
     <audio id="bgMusic" loop>
         <source src="https://raw.githubusercontent.com/faresakrm11111-lab/music/main/background.webm" type="audio/webm">
@@ -30,30 +45,48 @@
     </div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+      <i class="fas fa-moon"></i>
+    </button>
   </nav>
 
   <section id="home" class="hero visible">
-    <div class="hero-grid">
+    <!-- Ultra Premium Hero Architecture -->
+    <div class="massive-mask-text">DIGITAL</div>
+    <!-- Aurora animated background acting as fast fluid fallback -->
+    <div class="aurora-bg">
+      <div class="aurora aurora-1"></div>
+      <div class="aurora aurora-2"></div>
+      <div class="aurora aurora-3"></div>
+    </div>
+    
+    <div class="hero-grid" style="position:relative; z-index:2;">
       <div class="hero-text">
-        <div class="label">Digital Marketing Specialist</div>
-        <h1>
-          Building Brands,<br>
-          Leading <span class="highlight">Teams</span>
-        </h1>
-        <p>
-          Account Manager and Team Leader with 2.5+ years of experience in digital marketing, 
-          specializing in rebranding strategies and managing high-impact campaigns for major F&B brands.
-        </p>
+        <div class="reveal-wrapper label"><span id="typed-text" class="reveal-item"></span></div>
+        <div class="reveal-wrapper">
+          <h1 class="reveal-item">
+            Building Brands,<br>
+            Leading <span class="highlight">Teams</span>
+          </h1>
+        </div>
+        <div class="reveal-wrapper">
+          <p class="reveal-item" style="max-width: 600px;">
+            Account Manager and Team Leader with 2.5+ years of experience in digital marketing, 
+            specializing in rebranding strategies and managing high-impact campaigns for major F&B brands.
+          </p>
+        </div>
 
-        <div class="cta-buttons">
-          <a href="#contact" class="btn btn-primary">Let's Work Together</a>
-          <a href="#work" class="btn btn-secondary">View Portfolio</a>
+        <div class="cta-buttons reveal-wrapper">
+          <div class="reveal-item" style="display:flex; gap:15px; flex-wrap:wrap;">
+            <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+            <a href="#work" class="btn btn-secondary">View Portfolio</a>
+            <a href="#" class="btn btn-secondary cv-btn" target="_blank"><i class="fas fa-download" style="margin-right: 8px;"></i> Download CV</a>
+          </div>
         </div>
 
         <div class="hero-stats">
@@ -80,49 +113,82 @@
     </div>
   </section>
 
-  <section id="about" class="about-section">
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span>BRAND STRATEGY</span>
+      <span class="marquee-dot">•</span>
+      <span>ACCOUNT MANAGEMENT</span>
+      <span class="marquee-dot">•</span>
+      <span>DIGITAL MARKETING</span>
+      <span class="marquee-dot">•</span>
+      <span>TEAM LEADERSHIP</span>
+      <span class="marquee-dot">•</span>
+      <span>BRAND STRATEGY</span>
+      <span class="marquee-dot">•</span>
+      <span>ACCOUNT MANAGEMENT</span>
+      <span class="marquee-dot">•</span>
+      <span>DIGITAL MARKETING</span>
+      <span class="marquee-dot">•</span>
+      <span>TEAM LEADERSHIP</span>
+    </div>
+  </div>
+
+  <section id="expertise" class="bento-section">
     <div class="section-header">
-      <div class="section-label">Who I Am</div>
-      <h2>About Me</h2>
+      <div class="section-label">Expertise</div>
+      <h2>About & Skills</h2>
     </div>
 
-    <div class="about-content">
-      <div class="about-text">
-        <p>
-          Hi, I'm Fares Akram Mohamed, an Account Manager and Team Leader with over 2.5 years 
-          of experience in the digital marketing and social media landscape. I specialize in building 
-          client relationships, executing successful rebranding strategies, and leading 
-          multidisciplinary teams to deliver exceptional results.
-        </p>
-        <p>
-          Currently pursuing a Bachelor's degree in Industrial Technology (IT) at 
-          Borg El Arab Technological University, I combine technical understanding with 
-          business and marketing expertise to create comprehensive solutions for my clients.
-        </p>
-        <p>
-          I've had the privilege of working with major brands like Sheikh El Mandi, Bazooka, 
-          Doshka, Strella, and Shrimp Zone, managing everything from rebranding initiatives 
-          to day-to-day campaign execution.
-        </p>
+    <div class="bento-grid">
+      <!-- Bio Box -->
+      <div class="bento-card bento-large">
+        <h3>Building Better Brands</h3>
+        <p>Hi, I'm Fares Akram Mohamed, an Account Manager and Team Leader with 2.5+ years of experience in the digital marketing landscape. I specialize in successful rebranding strategies and leading multidisciplinary teams to deliver exceptional results.</p>
+        <div class="bento-stats">
+          <div><br><strong>2.5+</strong> Years Exp</div>
+          <div><br><strong>10+</strong> Accounts</div>
+          <div><br><strong>5+</strong> Major Brands</div>
+        </div>
       </div>
 
-      <div class="about-highlights">
-        <h3>Quick Facts</h3>
-        <ul>
-          <li>2.5+ years in digital marketing</li>
-          <li>Led multiple large teams</li>
-          <li>Managed 10+ client accounts</li>
-          <li>Managed B2B & B2C accounts</li>
-          <li>International client experience</li>
-          <li>Specialized in rebranding projects</li>
-          <li>Expected Graduation: 2028</li>
-        </ul>
+      <!-- Location Box -->
+      <div class="bento-card bento-small bento-location">
+        <i class="fas fa-map-marker-alt" style="font-size: 24px; color: var(--highlight); margin-bottom: 10px;"></i>
+        <h4>Alexandria, Egypt</h4>
+        <span style="font-size: 12px; color: var(--text-dim);">Available Remote</span>
+      </div>
 
-        <h3 style="margin-top: 30px;">Languages</h3>
-        <ul>
-          <li>Arabic: Native</li>
-          <li>English: Good command</li>
-        </ul>
+      <!-- Skills Box -->
+      <div class="bento-card bento-medium bento-skills">
+        <h3>Core Competencies</h3>
+        <div class="bento-tags">
+          <span>Account Mgmt</span>
+          <span>B2B & B2C</span>
+          <span>Rebranding</span>
+          <span>Social Media</span>
+          <span>Digital Strategy</span>
+          <span>Team Leadership</span>
+          <span>Analytics</span>
+        </div>
+      </div>
+
+      <!-- Tools Box -->
+      <div class="bento-card bento-medium bento-tools">
+        <h3>Tools & Platforms</h3>
+        <div class="bento-tags highlight-tags">
+          <span>Meta Suite</span>
+          <span>Trello</span>
+          <span>Notion</span>
+          <span>Google Workspace</span>
+          <span>Canva</span>
+        </div>
+      </div>
+
+      <!-- Education Box -->
+      <div class="bento-card bento-small bento-edu">
+        <i class="fas fa-graduation-cap" style="font-size: 24px; color: var(--highlight); margin-bottom: 10px;"></i>
+        <h4>Industrial Tech (IT)</h4>
+        <span style="font-size: 12px; color: var(--text-dim);">Class of 2028</span>
       </div>
     </div>
   </section>
@@ -136,8 +202,20 @@
       </p>
     </div>
 
-    <div class="work-grid">
-      <div class="work-item">
+    <div class="portfolio-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="rebranding">Rebranding</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+    </div>
+
+    <div class="work-grid horizontal-gallery">
+      <div class="work-item" data-category="social">
+        <div class="work-overlay">
+          <div class="overlay-content">
+            <h3>Instagram Campaign</h3>
+            <p>Social Media Reel</p>
+          </div>
+        </div>
 <a href="https://www.instagram.com/reel/DO3zcB_CV52/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
    target="_blank"
    style="display:inline-block; z-index:10; position:relative;">
@@ -146,7 +224,13 @@
        alt="Instagram Reel"
        width="350">
 </a>      </div>
-      <div class="work-item">
+      <div class="work-item" data-category="social">
+        <div class="work-overlay">
+          <div class="overlay-content">
+            <h3>Brand Story</h3>
+            <p>Social Media Reel</p>
+          </div>
+        </div>
 <a href="https://www.instagram.com/reel/DPRSo-8j9lq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
    target="_blank"
    style="display:inline-block; z-index:10; position:relative;">
@@ -155,7 +239,13 @@
        alt="Instagram Reel"
        width="350">
 </a>      </div>
-      <div class="work-item">
+      <div class="work-item" data-category="social">
+        <div class="work-overlay">
+          <div class="overlay-content">
+            <h3>Event Coverage</h3>
+            <p>Social Media Reel</p>
+          </div>
+        </div>
 <a href="https://www.instagram.com/reel/DPT3MlrijxV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
    target="_blank"
    style="display:inline-block; z-index:10; position:relative;">
@@ -163,9 +253,21 @@
        alt="Instagram Reel"
        width="350">
 </a>       </div>
-      <div class="work-item-image">
+      <div class="work-item-image" data-category="rebranding">
+        <div class="work-overlay">
+          <div class="overlay-content">
+            <h3>Brand Identity</h3>
+            <p>Rebranding Project</p>
+          </div>
+        </div>
 <img src="https://cdn.jsdelivr.net/gh/akrmfares07-byte/photo@main/fares-photo2.jpg.JPG" alt="Fares Akram">      </div>
-      <div class="work-item-image">
+      <div class="work-item-image" data-category="rebranding">
+        <div class="work-overlay">
+          <div class="overlay-content">
+            <h3>Logo Design</h3>
+            <p>Rebranding Project</p>
+          </div>
+        </div>
         <img src="https://cdn.jsdelivr.net/gh/faresakrm11111-lab/my-images/fares-photo3.jpg.JPG" alt="Fares Akram">
       </div>
     </div>
@@ -177,109 +279,74 @@
       <h2>Work Experience</h2>
     </div>
 
-    <div class="experience-grid">
-      <div class="experience-card">
-        <h3>Account Manager | Team Leader</h3>
-        <p class="experience-meta">Rebranding Marketing Agency | 2023 – Present | Alexandria, Egypt</p>
-        <ul>
-          <li>Managed full rebranding strategies for major F&B brands (Sheikh El Mandi, Bazooka, Doshka, Strella, Shrimp Zone)</li>
-          <li>Led two large multidisciplinary teams ensuring smooth workflow and on-time delivery</li>
-          <li>Built and maintained strong client relationships as main point of contact</li>
-          <li>Planned content calendars and coordinated brand messaging across digital platforms</li>
-          <li>Delivered detailed performance reports with optimization recommendations</li>
-        </ul>
+    <div class="experience-timeline">
+      <div class="timeline-item reveal-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Account Manager | Team Leader</h3>
+          <p class="experience-meta">Rebranding Marketing Agency | 2023 – Present | Alexandria, Egypt</p>
+          <ul>
+            <li>Managed full rebranding strategies for major F&B brands (Sheikh El Mandi, Bazooka, Doshka, Strella, Shrimp Zone)</li>
+            <li>Led two large multidisciplinary teams ensuring smooth workflow and on-time delivery</li>
+            <li>Built and maintained strong client relationships as main point of contact</li>
+            <li>Planned content calendars and coordinated brand messaging across digital platforms</li>
+            <li>Delivered detailed performance reports with optimization recommendations</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="experience-card">
-        <h3>Freelance Account Manager</h3>
-        <p class="experience-meta">Remote</p>
-        <ul>
-          <li>Managed international client accounts, including Libyan-based businesses</li>
-          <li>Delivered full account management services from onboarding to reporting</li>
-          <li>Worked across both B2B and B2C accounts</li>
-          <li>Coordinated with designers, content creators, and media teams</li>
-        </ul>
+      <div class="timeline-item reveal-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Freelance Account Manager</h3>
+          <p class="experience-meta">Remote</p>
+          <ul>
+            <li>Managed international client accounts, including Libyan-based businesses</li>
+            <li>Delivered full account management services from onboarding to reporting</li>
+            <li>Worked across both B2B and B2C accounts</li>
+            <li>Coordinated with designers, content creators, and media teams</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="experience-card">
-        <h3>Account Manager</h3>
-        <p class="experience-meta">Forsa Educational Platform (Forsetna) | Present</p>
-        <ul>
-          <li>Led digital communication and social media strategy</li>
-          <li>Scheduled and published educational content for student audiences</li>
-          <li>Coordinated with academic content creators</li>
-          <li>Ensured consistent branding across platforms</li>
-        </ul>
+      <div class="timeline-item reveal-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Account Manager</h3>
+          <p class="experience-meta">Forsa Educational Platform (Forsetna) | Present</p>
+          <ul>
+            <li>Led digital communication and social media strategy</li>
+            <li>Scheduled and published educational content for student audiences</li>
+            <li>Coordinated with academic content creators</li>
+            <li>Ensured consistent branding across platforms</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="experience-card">
-        <h3>Account Manager</h3>
-        <p class="experience-meta">Udjat Marketing Agency</p>
-        <ul>
-          <li>Managed multiple client accounts simultaneously</li>
-          <li>Coordinated between clients and internal teams</li>
-          <li>Monitored campaign performance and supported strategic improvements</li>
-        </ul>
+      <div class="timeline-item reveal-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Account Manager</h3>
+          <p class="experience-meta">Udjat Marketing Agency</p>
+          <ul>
+            <li>Managed multiple client accounts simultaneously</li>
+            <li>Coordinated between clients and internal teams</li>
+            <li>Monitored campaign performance and supported strategic improvements</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="experience-card">
-        <h3>Account Manager</h3>
-        <p class="experience-meta">V Marketing Agency</p>
-        <ul>
-          <li>Handled end-to-end account management for several brands</li>
-          <li>Maintained clear communication with clients</li>
-          <li>Supported branding, content strategy, and digital campaign execution</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="skills-section">
-    <div class="section-header">
-      <div class="section-label">Expertise</div>
-      <h2>Skills & Tools</h2>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Account Management</h3>
-        <p>B2B & B2C account handling, client relations, international client management, remote account coordination</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Team Leadership</h3>
-        <p>Leading multidisciplinary teams, workflow coordination, managing designers and content creators</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Brand Strategy</h3>
-        <p>Rebranding initiatives, brand positioning, strategic planning, brand messaging</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Social Media Management</h3>
-        <p>Content planning, social media strategy, platform management, community engagement</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Digital Marketing</h3>
-        <p>Campaign coordination, digital strategy, content marketing, performance optimization</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Analytics & Reporting</h3>
-        <p>Performance analysis, data-driven insights, optimization recommendations, client reporting</p>
-      </div>
-    </div>
-
-    <div class="tools-container">
-      <h3>Tools & Platforms</h3>
-      <div class="tools-list">
-        <span class="tool-tag">Meta Business Suite</span>
-        <span class="tool-tag">Trello</span>
-        <span class="tool-tag">Notion</span>
-        <span class="tool-tag">Google Workspace</span>
-        <span class="tool-tag">Canva</span>
+      <div class="timeline-item reveal-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Account Manager</h3>
+          <p class="experience-meta">V Marketing Agency</p>
+          <ul>
+            <li>Handled end-to-end account management for several brands</li>
+            <li>Maintained clear communication with clients</li>
+            <li>Supported branding, content strategy, and digital campaign execution</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -352,10 +419,43 @@
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Fares Akram Mohamed. All Rights Reserved.</p>
+  <footer class="jumbo-footer">
+    <div class="jumbo-content reveal-item">
+      <h2>HAVE AN IDEA?</h2>
+      <a href="mailto:faresakrm944@gmail.com" class="jumbo-link">LET'S TALK.</a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fares Akram Mohamed. All Rights Reserved.</p>
+    </div>
   </footer>
 
+  <!-- Project Drawer Modal -->
+  <div class="project-drawer-overlay" id="drawerOverlay"></div>
+  <div class="project-drawer" id="projectDrawer">
+    <div class="drawer-header">
+      <h3 id="drawerTitle">Project Title</h3>
+      <button class="drawer-close" aria-label="Close Drawer" id="drawerClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h4><i class="fas fa-exclamation-circle"></i> The Challenge</h4>
+        <p id="drawerChallenge">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="drawer-section">
+        <h4><i class="fas fa-lightbulb"></i> The Strategy</h4>
+        <p id="drawerStrategy">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="drawer-section">
+        <h4><i class="fas fa-chart-line"></i> The Results</h4>
+        <p id="drawerResults">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+      </div>
+      <a href="#" id="drawerLink" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">View Reference ↗</a>
+    </div>
+  </div>
+
+<div class="mouse-glow" id="mouseGlow"></div>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="js/script.js"></script>
 </body>
